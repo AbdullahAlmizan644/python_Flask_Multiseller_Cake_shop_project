@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+<br>
+<hr>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <a href="/profile"><button type="button" class="btn btn-info">Profile</button></a>
+      <a href="/userOrderHistory"><button type="button" class="btn btn-info">Order History</button></a>
+      <a href="#"><button type="button" class="btn btn-info">Edit Profile</button></a>
+      <h1>Order History</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product_id</th>
+            <th scope="col">Product_name</th>
+            <th scope="col">Product_seller</th>
+            <th scope="col">Full Address</th>
+            <th scope="col">Payment Method</th>
+            <th scope="col">User_name</th>
+            <th scope="col">User_Mobile</th>
+            <th scope="col">User_email</th>
+            <th scope="col">Order Status</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+  {% for order in orders%}
+          <tr>
+            <td>{{order.product_id}}</td>
+            <td>{{order.product_name}}</td>
+            <td>{{order.product_seller}}</td>
+            <td>{{order.full_address}}</td>
+            <td>{{order.payment_method}}</td>
+            <td>{{order.user_name}}</td>
+            <td>{{order.user_mobile}}</td>
+            <td>{{order.user_email}}</td>
+        {% if "1" in order.active%}
+            <td> Confirm</td>
+        {% else %}
+            <td> pending</td>
+        {% endif %}
+
+          </tr>
+   {% endfor %}
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<hr>
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "dashboardLayout.html"%}
+{% block content%}
+
+        <a href="/product_edit/0"><button type="button" class="btn btn-warning"  >Add Product</button></a>
+        <br>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">product Name</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">seller</th>
+                <th scope="col">category</th>
+                <th scope="col">date</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+      {% for post in posts%}
+              <tr>
+                <th scope="row">{{post.sno}}</th>
+                <td >{{post.name}}</td>
+                <td>{{post.slug}}</td>
+                <td>{{post.image}}</td>
+                <td>{{post.description}}</td>
+                <td>{{post.price}}</td>
+                <td>{{post.seller}}</td>
+                <td>{{post.category}}</td>
+                <td>{{post.date}}</td>
+                <td><a href="/product_edit/{{post.sno}}"><button type="button" class="btn btn-info">edit</button></a></td>
+                <td><a href="/product_delete/{{post.sno}}"><button type="button" class="btn btn-danger">delete</button></td></a>
+              </tr>
+       {% endfor %}
+            </tbody>
+          </table>
+
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "dashboardLayout.html"%}
+{% block content%}
+        <a href="/order_edit/0"><button type="button" class="btn btn-warning"  >Add Order</button></a>
+        <br>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Product_id</th>
+                <th scope="col">Product_name</th>
+                <th scope="col">Product_seller</th>
+                <th scope="col">Full Address</th>
+                <th scope="col">Payment Method</th>
+                <th scope="col">User_name</th>
+                <th scope="col">User_Mobile</th>
+                <th scope="col">User_email</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+      {% for order in orders%}
+              <tr>
+                <th scope="row">{{order.sno}}</th>
+                <td>{{order.product_id}}</td>
+                <td>{{order.product_name}}</td>
+                <td>{{order.product_seller}}</td>
+                <td>{{order.full_address}}</td>
+                <td>{{order.payment_method}}</td>
+                <td>{{order.user_name}}</td>
+                <td>{{order.user_mobile}}</td>
+                <td>{{order.user_email}}</td>
+                <td><a href="/order_edit/{{order.sno}}"><button type="button" class="btn btn-info">edit</button></a></td>
+                <td><a href="/order_delete/{{order.sno}}"><button type="button" class="btn btn-danger">delete</button></td></a>
+              </tr>
+       {% endfor %}
+            </tbody>
+          </table>
+
+{% endblock %}

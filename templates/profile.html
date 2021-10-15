@@ -1,0 +1,149 @@
+{% extends "layout.html"%}
+{% block content%}
+<br>
+<br>
+<br>
+
+{% if "user" in session%}
+<div class="container">
+  <div class="main-body">
+  
+        <div class="row gutters-sm">
+          <div class="col-md-12 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                {% set image_name="img/" + posts.image %}
+                <img src=" {{url_for('static',filename=image_name)}} " alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>{{posts.first_name}} {{posts.last_name}}</h4>
+                    <p class="text-secondary mb-1">{{posts.email}}</p>
+                    <p class="text-muted font-size-sm">{{posts.mobile}}</p>
+                    <a href="/profile"><button type="button" class="btn btn-outline-success">Profile</button></a>
+                    <a href="/userOrderHistory"><button type="button" class="btn btn-outline-success">Order History</button></a>
+                    <a href="/editProfile"><button type="button" class="btn btn-outline-success">Edit Profile</button></a>
+                    <a href="/logout"><button type="button" class="btn btn-danger">Logout</button></a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.first_name}} {{posts.last_name}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.email}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Mobile</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.mobile}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                   
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+
+                  </div>
+                </div>
+                <hr>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endif %}
+
+{% if "seller" in session%}
+
+<div class="container">
+  <div class="main-body">
+  
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                {% set image_name="img/" + posts.image %}
+                  <img src=" {{url_for('static',filename=image_name)}} " alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>{{posts.name}}</h4>
+                    <p class="text-secondary mb-1">{{posts.email}}</p>
+                    <p class="text-muted font-size-sm">{{posts.phone}}</p>
+                    <a href="/sellerLogout"><button type="button" class="btn btn-info">Logout</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.name}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.email}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Mobile</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{posts.phone}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                   
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <a href="/sellerAddProduct"><button type="button" class="btn btn-info">Add Product</button></a>
+                    <a href="/sellerAddCategory"><button type="button" class="btn btn-info">Add Category</button></a>
+                    <a href="/sellerOrder"><button type="button" class="btn btn-info">Order</button></a>
+
+                  </div>
+                </div>
+                <hr>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endif %}
+{% endblock %}
+ 

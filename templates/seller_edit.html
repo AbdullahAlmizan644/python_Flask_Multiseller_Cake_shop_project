@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{
+    background-color: blueviolet;
+}
+h1{
+    color: white;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button{
+    background-color: rgb(207, 76, 24);
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 7%;
+    color: white;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #1dbfdb;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h1>Seller Table</h1>
+
+<div>
+  <form action="/seller_edit/{{id}}" method="post">
+
+    <label for="lname">Id</label>
+    <input type="text" id="lname" name="pro_id" value={{posts.id}}>
+
+    <label for="lname">Name</label>
+    <input type="text" id="lname" name="pro_name" value={{posts.name}}>
+
+    <label for="lname">Username</label>
+    <input type="text" id="lname" name="pro_username" value={{posts.username}}>
+
+    <label for="lname">Password</label>
+    <input type="text" id="lname" name="pro_password" value={{posts.password}}>
+
+    <label for="lname">Phone</label>
+    <input type="text" id="lname" name="pro_phone" value={{posts.phone}}>
+
+    <label for="lname">Email</label>
+    <input type="text" id="lname" name="pro_email" value={{posts.email}}>
+
+    <label for="lname">Image</label>
+    <input type="text" id="lname" name="pro_image" value={{posts.image}}>
+
+
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+

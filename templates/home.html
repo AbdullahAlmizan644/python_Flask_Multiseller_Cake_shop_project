@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    .display-4{
+        text-align: center;
+        color: rgb(186, 114, 219);
+        font-weight: 600;
+    }
+</style>
+
+<br>
+<br>
+<h1 class="display-4">Visit Your Favourite Cake Shop </h1>
+<hr>
+
+
+
+{% for seller in sellers%}
+{% set image_name="img/" + seller.image%}
+
+<div class="col-lg-4 col-md-6 mb-4" id="esha2">
+    <div class="card h-100">
+        <a href="#"><img class="card-img-top" src={{url_for("static", filename= image_name)}} width="700" height="300" alt=""></a>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a href="/seller/{{seller.name}}">{{seller.name}}</a>
+            </h4>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endfor %}
+
+<br>
+<br>
+<hr>
+
+
+
+{% endblock %}

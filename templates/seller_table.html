@@ -1,0 +1,37 @@
+{% extends "dashboardLayout.html"%}
+{% block content%}
+        <a href="/seller_edit/0"><button type="button" class="btn btn-warning"  >Add Seller</button></a>
+        <br>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col"> Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Logo</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+      {% for post in posts%}
+              <tr>
+                <th scope="row">{{post.id}}</th>
+                <td>{{post.name}}</td>
+                <td>{{post.username}}</td>
+                <td>{{post.password}}</td>
+                <td>{{post.phone}}</td>
+                <td>{{post.email}}</td>
+                <td>{{post.image}}</td>
+                <td><a href="/seller_edit/{{post.id}}"><button type="button" class="btn btn-info">edit</button></a></td>
+                <td><a href="/seller_delete/{{post.id}}"><button type="button" class="btn btn-danger">delete</button></td></a>
+              </tr>
+       {% endfor %}
+            </tbody>
+          </table>
+
+{% endblock %}

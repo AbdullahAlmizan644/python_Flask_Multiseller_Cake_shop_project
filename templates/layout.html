@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Cakes homepage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href={{url_for("static", filename="vendor/bootstrap/css/bootstrap.min.css")}} rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href={{url_for("static", filename="css/shop-homepage.css")}} rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+      class *=gd-]{
+               float:left;
+               padding: 15px;
+               
+           }
+           .gd-1{
+               width: 8.33%;
+           }
+           .gd-2{
+               width: 16.66%;
+           }
+           .gd-3{
+               width: 25%;
+           }
+           .gd4{
+               width: 33.33%;
+           }
+           .gd-5{
+               width: 41.66%;
+           }
+           .gd-6{
+               width: 50%;
+           }
+           .gd-7{
+               width: 58.33%;
+           }
+           .gd-8{
+               width: 66.66%;
+           }
+           .gd-9{
+               width: 75%;
+           }
+           .gd-10{
+               width: 83.33%;
+           }
+           .gd-11{
+               width: 91.33%;
+           }
+           .gd-12{
+               width: 100%;
+           }
+
+
+
+    .n{
+      background-color: #900C3F;
+      font-family: 'Hachi Maru Pop', cursive;
+    }
+    .footer{
+                text-align: center;
+                padding: 25px;
+                border: 1px solid green;
+                background-color:#1F618D;
+                color: white;
+                border-radius: 10px;
+                font-family: 'Oswald', sans-serif;
+            }
+
+    #esha{
+      display: inline-block;
+      width: 32%;
+
+    }
+    #esha2{
+      display: inline-block;
+      width: 32%;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top n" >
+    <div class="container">
+      <a class="navbar-brand" href="/home">Cakes</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="/home">home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user_signin">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin_login">Admin login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sellerLogin">Seller Login</a>
+          </li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  {% block content %} {% endblock %}
+
+  
+ <!-- Footer -->
+  <div class="footer gd-12" >
+      <p class="m-0 text-center ">Copyright &copy; Cakes 2021</p>
+    <!-- /.container -->
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src={{url_for("static", filename="vendor/jquery/jquery.min.js")}}></script>
+  <script src={{url_for("static", filename="vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+ <hr>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form name="sentMessage" id="contactForm" action="/sellerAddCategory" method="post"  novalidate >
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Category name</label>
+              <input type="text" class="form-control" placeholder="Category Name" id="name" name="pro_categoryName" required data-validation-required-message="Please enter your name.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Category Number</label>
+              <input type="email" class="form-control" placeholder="Category Number" id="email" name="pro_categoryNumber" required data-validation-required-message="Please enter your email address.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+
+
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+{% endblock %}
+
+
+

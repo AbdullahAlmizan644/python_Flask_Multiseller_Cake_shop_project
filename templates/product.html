@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+  
+        <div class="col-lg-3">
+  
+          <h1 class="my-4">{{product.seller}}</h1>
+          <div class="list-group">
+
+          </div>
+  
+        </div>
+        <!-- /.col-lg-3 -->
+
+
+  {% set image_name="img/" + product.image %}
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src={{url_for("static", filename=image_name)}} width="900" height="400" alt="">
+          <div class="card-body">
+            <h3 class="card-title">{{product.name}}</h3>
+            <h4>{{product.price}} Tk</h4>
+            <p class="card-text">{{product.description}}</p>
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            
+          </div>
+          <div class="card-body">
+            <p>{{product.description}}</p>
+            <small class="text-muted">Posted by Admin {{product.date}}</small>
+            <hr>
+            <a href="/order_page/{{product.sno}}" class="btn btn-success">Order</a>
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+
+
+{% endblock %}

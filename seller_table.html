@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 800px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #23a9ca;
+      height: 100%;
+    }
+
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Tables</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/product_table">Product</a></li>
+        <li><a href="/user_table">User</a></li>
+        <li><a href="/order_table">Order</a></li>
+        <li><a href="/seller_table">Seller</a></li>
+
+      </ul><br>
+
+    </div>
+
+    <div class="col-sm-9">
+      <h3>Dashboard</h3>
+      <br>
+      <br>
+      <hr>
+        <a href="/user_edit/0"><button type="button" class="btn btn-warning"  >Add Seller</button></a>
+        <br>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col"> Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Logo</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
+              </tr>
+            </thead>
+            <tbody>
+      {% for post in posts%}
+              <tr>
+                <th scope="row">{{post.id}}</th>
+                <td>{{post.name}}</td>
+                <td>{{post.username}}</td>
+                <td>{{post.password}}</td>
+                <td>{{post.phone}}</td>
+                <td>{{post.email}}</td>
+                <td>{{post.image}}</td>
+                <td><a href="/seller_edit/{{post.id}}"><button type="button" class="btn btn-info">edit</button></a></td>
+                <td><a href="/seller_delete/{{post.id}}"><button type="button" class="btn btn-danger">delete</button></td></a>
+              </tr>
+       {% endfor %}
+            </tbody>
+          </table>
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Copywrite @Cakes</p>
+</footer>
+
+</body>
+</html>
